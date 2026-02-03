@@ -4,5 +4,13 @@ fun main(){
     val name : String = "John Thor"
     val score : Int = 80
 
+    val grade = when(score) {
+        in 90 .. 100 -> "A"
+        in 80 .. 89 -> "B"
+        in 70 .. 79 -> "C"
+        else -> "D"
+    }
+
     println("Nama : $name , Nilai : $score")
+    println("Grade Kamu : $grade")
 }
