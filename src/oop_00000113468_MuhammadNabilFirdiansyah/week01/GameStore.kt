@@ -3,9 +3,10 @@ package oop_00000113468_MuhammadNabilFirdiansyah.week01
 fun main(){
     val gameTitle ="PUBG"
     val price =700000
+    val userNote: String? = null
     val discount =calculateDiscount(price)
     val finalPrice= price - discount
-    printReceipt(title = gameTitle, originalPrice = price,finalPrice = finalPrice)
+    printReceipt(title = gameTitle, originalPrice = price,finalPrice = finalPrice, note = userNote)
 }
 
 fun calculateDiscount(price: Int): Int =
@@ -16,8 +17,9 @@ fun calculateDiscount(price: Int): Int =
         (price * 0.1).toInt()
     }
 
-fun printReceipt(title: String, originalPrice: Int ,finalPrice: Int) {
+fun printReceipt(title: String, originalPrice: Int ,finalPrice: Int , note: String?) {
     println("Judul Game = $title")
     println("Harga Asli = $originalPrice ")
     println("Harga Akhir  = $finalPrice")
+    println("Catatan = ${note?: "Tidak ada catatan"}")
 }
