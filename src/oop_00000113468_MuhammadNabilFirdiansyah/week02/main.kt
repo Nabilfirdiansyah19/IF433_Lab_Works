@@ -15,9 +15,21 @@ fun main(){
         println("Error : pendaftaran dibatalkan, nim harus 5 karakter")
 
     }else {
-        print("masukkan jurusan= ")
-        val major = scanner.nextLine()
-        val s1 = Student(name,nim,major)
-        println("Status : pendaftaran selesai")
+        print("pilih jalur (1.reguler , 2.umum) :")
+        val type = scanner.nextInt()
+        scanner.nextLine()
+
+        if (type == 1){
+            print("masukkan jurusan= ")
+            val major = scanner.nextLine()
+            val s1 = Student(name,nim,major)
+            println(" Terdaftar di: ${s1.major} dengan GPA awal ${s1.gpa}")
+        } else if (type == 2){
+            val s2= Student(name,nim)
+            println("Terdaftar di: ${s2.major} dengan GPA awal ${s2.gpa}")
+        } else{
+            println("pilihan salah, pendaftaran batal")
+        }
+
     }
 }
