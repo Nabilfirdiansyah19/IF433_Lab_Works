@@ -3,6 +3,8 @@ package oop_00000113468_MuhammadNabilFirdiansyah.week02
 import java.util.Scanner
 
 fun main(){
+
+// sistem pendaftaran mahasiswa
     val scanner = Scanner(System.`in`)
     println("-----Aplikasi PMB UMN-----")
     print("masukkan nama = ")
@@ -32,4 +34,22 @@ fun main(){
         }
 
     }
+
+//  tugas 1
+    println("\nSISTEM PEMINJAMAN BUKU")
+    print("Masukkan Judul Buku: ")
+    val bookTitle = scanner.nextLine()
+    print("Masukkan Nama Peminjam: ")
+    val borrower = scanner.nextLine()
+    print("Masukkan Lama Pinjam (Hari): ")
+    var duration = scanner.nextInt()
+    scanner.nextLine()
+
+    if (duration < 0) {
+        duration = 1
+    }
+
+    val loan = Loan(bookTitle, borrower, duration)
+    println("Detail Pinjaman: ${loan.borrower} \n meminjam ${loan.bookTitle} \n selama ${loan.loanDuration} hari.")
+    println("Total Denda: Rp ${loan.calculateFine()}")
 }
