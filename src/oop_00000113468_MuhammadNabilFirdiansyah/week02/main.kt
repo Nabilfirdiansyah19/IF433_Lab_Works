@@ -52,4 +52,43 @@ fun main(){
     val loan = Loan(bookTitle, borrower, duration)
     println("Detail Pinjaman: ${loan.borrower} \n meminjam ${loan.bookTitle} \n selama ${loan.loanDuration} hari.")
     println("Total Denda: Rp ${loan.calculateFine()}")
+
+
+//    tugas 2
+    println("\n MINI RPG BATTLE ")
+    print("Nama Hero Anda: ")
+    val heroName = scanner.nextLine()
+    print("Stat Damage: ")
+    val heroDamage = scanner.nextInt()
+
+    val myHero = Hero(heroName, heroDamage)
+    var enemyHp = 100
+
+    while (myHero.isAlive() && enemyHp > 0) {
+        println("\nHP Anda: ${myHero.hp} | HP Musuh: $enemyHp")
+        print("Menu: 1. Serang, 2. Kabur: ")
+        val action = scanner.nextInt()
+
+        if (action == 1) {
+            myHero.attack("Enemy")
+            enemyHp -= myHero.baseDamage
+            println("HP Musuh tersisa: $enemyHp")
+
+            if (enemyHp > 0) {
+                val dmgDealt = (10..20).random()
+                myHero.takeDamage(dmgDealt)
+                println("Musuh membalas! Anda terkena $dmgDealt damage.")
+                println("Sisa HP Anda: ${myHero.hp}")
+            }
+        } else {
+            println("Anda memilih kabur! Pertarungan berakhir.")
+            break
+        }
+    }
+
+    if (enemyHp <= 0) {
+        println("\nSelamat! ${myHero.name} menang!")
+    } else if (!myHero.isAlive()) {
+        println("\nGame Over! ${myHero.name} telah gugur.")
+    }
 }
