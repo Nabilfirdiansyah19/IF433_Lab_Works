@@ -16,4 +16,13 @@ fun main(){
     sword.damage = 9999
     println("Final Damage: ${sword.damage}")
     println("Tier: ${sword.tier}")
+
+    println("\n--- Test Tugas 2: Player ---")
+    val player = Player("Gamer99")
+//    player.xp = 500
+//    println(player.xp) error
+    player.addXp(50)
+    println("Current Level: ${player.level}")
+
+    player.addXp(60)
 }
