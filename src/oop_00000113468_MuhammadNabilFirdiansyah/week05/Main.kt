@@ -34,6 +34,9 @@ fun main(){
     val listPayment: List<PaymentMethod> = listOf(myWallet, myCard)
 
     for (payment in listPayment) {
+        if (payment is EWallet) {
+            payment.topUp(50000.0)
+        }
         payment.processPayment(75000.0)
     }
 }
