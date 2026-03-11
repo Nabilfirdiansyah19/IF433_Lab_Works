@@ -19,10 +19,16 @@ fun main(){
     processCheckout(pay1,50000.0)
     processCheckout(pay2,150000.0)
 
-    println("===Tugas Mandiri===")
+    println("=====Tugas Mandiri=====")
     val lamp = SmartLamp("L01", "Ruang Tamu")
     val speaker = SmartSpeaker("S01", "Google Nest Dapur")
     val cctv = SmartCCTV("C01", "Ezviz Garasi")
 
+    val myHub = SmartHomeHub()
+    myHub.addDevice(lamp)
+    myHub.addDevice(speaker)
+    myHub.addDevice(cctv)
 
+    myHub.activateSecurityMode()
+    myHub.turnOffAllSwitches()
 }
