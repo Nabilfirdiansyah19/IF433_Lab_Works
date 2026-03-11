@@ -16,4 +16,17 @@ class SmartHomeHub {
             }
         }
     }
+
+    fun activateSecurityMode() {
+        println("\n--- EMERGENCY: Activating Security Mode ---")
+        for (device in devices) {
+            if (device is Recordable) {
+                device.startRecord()
+            }
+
+            if (device is SmartSpeaker) {
+                device.playMusic("Sirine Peringatan")
+            }
+        }
+    }
 }
