@@ -39,4 +39,11 @@ fun main(){
     println("\n=== SIMULASI SINGLETON ===")
     GameManager.startGame()
     GameManager.startGame()
+
+    println("\n=== TEST TASK: ENUM & FACTORY ===")
+    println("Drop chance LEGENDARY: ${ItemRarity.LEGENDARY.dropChance}%")
+
+    val playerWeapon = Weapon.forgeStarterSword()
+    println("Senjata awal berhasil dibuat: ${playerWeapon.item.name}")
+    println("Detail: Damage ${playerWeapon.item.damage}, Rarity ${playerWeapon.item.rarity}")
 }
