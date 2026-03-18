@@ -35,4 +35,8 @@ fun main(){
         is ApiResponse.Loading -> "Tampilkan Spinner"
     }
     println(uiMessage)
+
+    println("\n=== SIMULASI SINGLETON ===")
+    GameManager.startGame()
+    GameManager.startGame()
 }
