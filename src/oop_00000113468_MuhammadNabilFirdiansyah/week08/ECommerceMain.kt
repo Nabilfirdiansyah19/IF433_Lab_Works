@@ -25,5 +25,6 @@ fun main() {
             println("Peringatan: Data korup! ${e.message}")
         }
         println("---")
+        // Pengetesan selesai: Semua skenario Null Safety terpenuhi
     }
 }
