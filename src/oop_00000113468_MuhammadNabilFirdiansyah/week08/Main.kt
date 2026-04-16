@@ -57,4 +57,6 @@ fun main(){
     val javaResponse = LegacyJavaAPI.fetchServerStatus()
     val statusLength = javaResponse!!.length
     println("status dari java : $javaResponse(length : $statusLength)")
+
+    runMockUntiTest()
 }
