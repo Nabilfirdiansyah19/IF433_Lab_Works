@@ -10,3 +10,7 @@ fun dispenseKibble(requestedGram: Int, availableGram: Int, isJammed: Boolean): I
     return availableGram // placeholder sementara
 
 }
+
+fun main() {
+    var currentKibbleStock = 50
+}
